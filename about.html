@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>About Us | AURA - CLINICAL LAB</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favico.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Red+Rose:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+:root {
+    --primary: #087eae;
+    --secondary: #13b8aa;
+    --dark: #153b50;
+    --light: #eff9fc;
+    --text: #647783;
+    --white: #fff;
+}
+
+        h1, h2, h3, h4 {
+    font-family: 'Outfit', sans-serif;
+    
+    line-height: 1.2;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section {
+    padding: 85px 0;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 45px;
+}
+
+.section-heading span,
+.sub-heading {
+    color:#0031ad;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    margin: 12px 0;
+}
+
+.section-heading p {
+    font-size: 15px;
+}
+
+/* Hero */
+
+.about-hero {
+    min-height: 370px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background:
+    linear-gradient(90deg, rgba(7,48,75,.92), rgba(7,87,116,.65)),
+    url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1800&q=85')
+    center/cover;
+    color: white;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: 52px;
+    margin: 15px 0;
+}
+
+.hero-content p {
+    color: #e3f5fa;
+    max-width: 550px;
+}
+
+.breadcrumb {
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: #65e1d2;
+    text-decoration: none;
+}
+
+.breadcrumb i {
+    margin: 0 10px;
+}
+
+/* About Story */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.about-images {
+    position: relative;
+    padding: 0 25px 30px 0;
+}
+
+.about-images img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.experience-box {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background:#b30101;
+    color: white;
+    padding: 22px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+}
+
+.experience-box i {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.experience-box h3 {
+    color: white;
+    font-size: 20px;
+}
+
+.about-content h2 {
+    font-size: 38px;
+    margin: 13px 0 18px;
+}
+
+.about-content p {
+    margin-bottom: 16px;
+}
+
+.about-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.about-point {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.about-point i {
+    color:#0031ad;
+    font-size: 18px;
+}
+
+.primary-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.primary-btn:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+}
+
+/* Mission Vision */
+
+.mission-section {
+    background:#F9FBFF;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.mission-card {
+    background: white;
+    padding: 38px;
+    border-radius: 14px;
+    border-bottom: 4px solid #0031ad;
+    transition: .3s;
+}
+
+.mission-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 35px rgba(20,80,100,.1);
+}
+
+.mission-icon {
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    background:#F4F8FF;
+    color:#0031ad;
+    border-radius: 14px;
+    font-size: 28px;
+    margin-bottom: 22px;
+}
+
+.mission-card h3 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+/* Why Choose */
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.why-card {
+    text-align: center;
+    padding: 35px 25px;
+    background: white;
+    border: 1px solid #e5eff2;
+    border-radius: 14px;
+    transition: .3s;
+}
+
+.why-card:hover {
+    border-color:#0031ad;
+    box-shadow: 0 10px 30px rgba(0,80,100,.08);
+    transform: translateY(-5px);
+}
+
+.why-card i {
+    font-size: 34px;
+    color:#0031ad;
+    margin-bottom: 20px;
+}
+
+.why-card h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+/* Core Values */
+
+.values-section {
+    background:#F9FBFF;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.value-card {
+    text-align: center;
+    padding: 30px 15px;
+    background: white;
+    border-radius: 12px;
+}
+
+.value-card i {
+    font-size: 32px;
+    color: #0031ad;
+    margin-bottom: 15px;
+}
+
+.value-card h3 {
+    font-size: 18px;
+}
+
+/* CTA */
+
+.about-cta {
+    padding: 65px 20px;
+    background: #EFF4FF;
+    text-align: center;
+}
+
+.about-cta h2 {
+    color: #173b59;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.about-cta p {
+    color: #718096;
+    max-width: 650px;
+    margin: 0 auto 25px;
+}
+
+.white-btn {
+    display: inline-block;
+    padding: 13px 28px;
+    background: white;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 6px;
+    transition: .3s;
+}
+
+.white-btn:hover {
+    background: var(--dark);
+    color: white;
+}
+
+/* Responsive */
+
+@media(max-width: 900px) {
+    .about-grid {
+        gap: 35px;
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 650px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .about-hero {
+        min-height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .about-grid,
+    .mission-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-images img {
+        height: 330px;
+    }
+
+    .about-content h2,
+    .section-heading h2 {
+        font-size: 29px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-points {
+        grid-template-columns: 1fr;
+    }
+
+    .about-cta h2 {
+        font-size: 28px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid py-2 d-none d-lg-flex bg-red fnt-clr">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <small class="me-3"><i class="fa fa-map-marker-alt me-2"></i>Siluvai mukku, Vallam, Tamil Nadu 627809</small>
+                    <small class="me-3"><i class="fa fa-clock me-2"></i>Mon - Sun 07:00 am - 09:00 pm</small>
+                </div>
+                <nav class="breadcrumb fnt-clr mb-0">
+                    <a class="breadcrumb-item small text-body" href="#">Career</a>
+                    <a class="breadcrumb-item small text-body" href="#">Support</a>
+                    <a class="breadcrumb-item small text-body" href="#">Terms</a>
+               
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Brand Start -->
+    <div class="container-fluid text-white pt-4 pb-5 d-none d-lg-flex">
+        <div class="container pb-2">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex">
+                    <div class="d-flex text-black">
+                    <i class="bi bi-telephone-inbound fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="mb-0">Call Now</h5>
+                        <span>+91-9952195211</span>
+ 
+                    </div>
+                </div>
+                    
+                    
+                </div>
+                <a href="index.html"><img src="img/logo.png" width="250" height="150"></a>
+                <div class="d-flex text-black">
+                    <i class="bi bi-envelope fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="mb-0">Mail Now</h5>
+                        <span>info@example.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Brand End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-blue py-lg-0 px-lg-3">
+                <a href="index.html" class="navbar-brand d-lg-none">
+                    <h1 class="text-primary m-0">Lab<span class="text-dark">sky</span></h1>
+                </a>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About Us</a>
+                        <a href="lab-tests.html" class="nav-item nav-link">Lab Tests</a>
+                        <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                        <a href="our-team.html" class="nav-item nav-link">Our Team</a>
+                        <a href="appoinment.html" class="nav-item nav-link">Book an Appointment</a>
+                    
+                        <a href="faq.html" class="nav-item nav-link">FAQs</a>
+
+                        <a href="contact-us.html" class="nav-item nav-link">Contact Us</a>
+                    </div>
+                    <div class="ms-auto d-none d-lg-flex">
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5 mt-4">
+            <h1 class="display-2 text-white mb-3 animated slideInDown">About Us</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item" aria-current="page">About Us</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    
+    <!-- WHO WE ARE -->
+<section class="section">
+    <div class="container about-grid">
+
+        <div class="about-images">
+            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=900&q=85"
+                 alt="Clinical laboratory testing">
+            <div class="experience-box">
+                <i class="fas fa-microscope"></i>
+                <h3>Quality Diagnostics</h3>
+                <small>Care you can trust</small>
+            </div>
+        </div>
+
+        <div class="about-content">
+            <span class="sub-heading">Who We Are</span>
+            <h2>Reliable & High-Quality Laboratory Services</h2>
+
+            <p>
+                Welcome to <b>Aura Clinical Lab</b>, your trusted partner for
+                diagnostic and laboratory testing services. We are committed
+                to supporting better healthcare through reliable laboratory
+                investigations and patient-focused service.
+            </p>
+
+            <p>
+                We provide a wide range of diagnostic tests, including
+                blood investigations, diabetes screening, thyroid testing,
+                cholesterol testing, liver and kidney function tests,
+                urine analysis and other specialized investigations.
+            </p>
+
+            <p>
+                Our focus is to make diagnostic services accessible,
+                dependable and convenient while maintaining a strong
+                commitment to quality and patient care.
+            </p>
+
+            <div class="about-points">
+                <div class="about-point">
+                    <i class="fas fa-check-circle"></i>
+                    Reliable Testing
+                </div>
+                <div class="about-point">
+                    <i class="fas fa-check-circle"></i>
+                    Patient-Focused Care
+                </div>
+                <div class="about-point">
+                    <i class="fas fa-check-circle"></i>
+                    Wide Range of Tests
+                </div>
+                <div class="about-point">
+                    <i class="fas fa-check-circle"></i>
+                    Quality Commitment
+                </div>
+            </div>
+
+            <a href="contact.html" class="primary-btn">
+                Contact Us <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="section mission-section">
+    <div class="container">
+
+        <div class="section-heading">
+            <span>Our Purpose</span>
+            <h2>Our Mission & Vision</h2>
+            <p>Our commitment is to support healthier lives through dependable diagnostic services.</p>
+        </div>
+
+        <div class="mission-grid">
+
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>
+                    To provide reliable, accessible and quality-focused
+                    diagnostic laboratory services while ensuring a
+                    comfortable and caring experience for every patient.
+                </p>
+            </div>
+
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>
+                    To become a trusted diagnostic laboratory known for
+                    quality, accuracy, professional service and a
+                    patient-first approach to healthcare.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- CORE VALUES -->
+<section class="section values-section">
+    <div class="container">
+
+        <div class="section-heading">
+            <span>What We Believe</span>
+            <h2>Our Core Values</h2>
+            <p>The principles that guide our laboratory services and patient relationships.</p>
+        </div>
+
+        <div class="values-grid">
+
+            <div class="value-card">
+                <i class="fas fa-award"></i>
+                <h3>Quality</h3>
+                <p>Commitment to quality in every service.</p>
+            </div>
+
+            <div class="value-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Trust</h3>
+                <p>Building lasting patient relationships.</p>
+            </div>
+
+            <div class="value-card">
+                <i class="fas fa-user-shield"></i>
+                <h3>Integrity</h3>
+                <p>Responsible and ethical service.</p>
+            </div>
+
+            <div class="value-card">
+                <i class="fas fa-heart-pulse"></i>
+                <h3>Care</h3>
+                <p>Putting patient well-being first.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="about-cta">
+    <div class="container">
+        <h2>Your Health, Our Priority!</h2>
+        <p>
+            Take a proactive step towards better health.
+            Contact Aura Clinical Lab for your diagnostic testing needs.
+        </p>
+        <a href="appoinment.html" class="white-btn">
+            Book an Appointment <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</section>
+     <!-- Footer Start -->
+    <div class="container-fluid footer position-relative bg-dark text-white-50 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 pe-lg-5">
+                    <a href="index.html" class="navbar-brand">
+                    <img src="img/aura-logo.png" alt="Aura Logo">
+                    </a>
+                    <p class="fs-5 mb-4" style="padding-top: 20px;">At Aura Clinical Lab, Vallam, we are committed to providing reliable diagnostic testing with a focus on accuracy, quality, and patient care.</p>
+                    <p><i class="fa fa-map-marker-alt me-2"></i>Siluvai Mukku, Vallam, Tenkasi District, Tamil Nadu 627809</p>
+                    <p><i class="fa fa-phone-alt me-2"></i>+91-9952195211</p>
+                    <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
+                    <div class="d-flex mt-4">
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <div class="row g-5">
+                        <div class="col-sm-6">
+                            <h4 class="text-light mb-4">Quick Links</h4>
+                            <a class="btn btn-link" href="about.html">About Us</a>
+                             <a class="btn btn-link" href="lab-tests.html">Lab Tests</a>
+                             <a class="btn btn-link" href="gallery.html">Gallery</a>
+                             <a class="btn btn-link" href="our-team.html">Our Team</a>
+                             <a class="btn btn-link" href="faq.html">FAQs</a>
+                            <a class="btn btn-link" href="contact-us.html">Contact Us</a>
+                           
+                        
+                        </div>
+                        <div class="col-sm-6">
+                            <h4 class="text-light mb-4">Patient Support</h4>
+                            <a class="btn btn-link" href="appoinment.html">Book an Appoinment</a>
+                            <a class="btn btn-link" href="">Help & Support</a>
+                            <a class="btn btn-link" href="">Terms & Condition</a>
+                            
+                        </div>
+                        <div class="col-sm-12">
+                            <h4 class="text-light mb-4">Newsletter</h4>
+                            <div class="w-100">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-0 py-3 px-4" style="background: rgba(255, 255, 255, .1);" placeholder="Your Email Address"><button class="btn btn-primary px-4">Sign Up</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+     <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark text-white-50 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; <a href="#">2026 Aura Clinical Lab</a>. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <!--/*** The author’s attribution link below must remain intact on your website. ***/-->
+                    <!--/*** If you wish to remove this credit link, please purchase the Pro Version from https://htmlcodex.com . ***/-->
+                    <p class="mb-0">Designed & Maintained by<a href="https://www.skiftertechnologies.com"> Skifter Technologies</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>AURA - CLINICAL LAB</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+     <link href="img/favico.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Red+Rose:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+<style>
+    .faq-section {
+    padding: 90px 20px;
+    background:#F9FBFF;
+}
+
+.faq-container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Header */
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.faq-label {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 30px;
+    background:#EFF4FF;
+    color: #0031ad;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.faq-header h2 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #173b59;
+    margin-bottom: 15px;
+}
+
+.faq-header h2 span {
+    color: #0031ad;
+}
+
+.faq-header p {
+    font-size: 16px;
+    line-height: 1.8;
+   
+    max-width: 650px;
+    margin: auto;
+}
+
+/* Search */
+
+.faq-search {
+    max-width: 600px;
+    margin: 0 auto 35px;
+    position: relative;
+}
+
+.faq-search input {
+    width: 100%;
+    padding: 17px 50px 17px 20px;
+    border: 1px solid #dce8ef;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    background: #fff;
+    transition: .3s;
+}
+
+.faq-search input:focus {
+    border-color: #079caf;
+    box-shadow: 0 0 0 4px rgba(7,156,175,.08);
+}
+
+.faq-search i {
+    position: absolute;
+    right: 20px;
+    top: 19px;
+    color: #079caf;
+}
+
+/* FAQ Accordion */
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faq-item {
+    background: #fff;
+    border: 1px solid #e5edf2;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: .3s ease;
+}
+
+.faq-item:hover,
+.faq-item.active {
+    border-color: #0031ad;
+    box-shadow: 0 8px 25px rgba(29, 94, 120, .07);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 21px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    background: transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.question-text {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #263e54;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.question-number {
+    min-width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:#F4F8FF;
+    color: #0031ad;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.faq-icon {
+    min-width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background:#F4F8FF;
+    color: #0031ad;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.faq-item.active .faq-icon {
+    background: #0031ad;
+    color: #fff;
+    transform: rotate(180deg);
+}
+
+/* Answer */
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease;
+}
+
+.faq-answer p {
+    padding: 0 75px 22px;
+    color: #718096;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* No results */
+
+.no-results {
+    display: none;
+    text-align: center;
+    padding: 35px 15px;
+    color: #718096;
+}
+
+.no-results i {
+    font-size: 30px;
+    color: #079caf;
+    margin-bottom: 12px;
+}
+
+/* Contact Box */
+
+.faq-contact {
+    margin-top: 40px;
+    padding: 30px;
+    border-radius: 15px;
+    background: #EFF4FF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.faq-contact h3 {
+    font-size: 20px;
+    color: #173b59;
+    margin-bottom: 8px;
+}
+
+.faq-contact p {
+    
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.faq-contact a {
+    display: inline-block;
+    padding: 13px 24px;
+    background: #3368c6;
+    color: lightgray;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+   
+    white-space: nowrap;
+    transition: .3s;
+    border-color: #3368c6;
+}
+
+.faq-contact a:hover {
+    background: #0031ad;
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* Responsive */
+
+@media(max-width: 768px) {
+    .faq-section {
+        padding: 65px 16px;
+    }
+
+    .faq-header h2 {
+        font-size: 30px;
+    }
+
+    .faq-header p {
+        font-size: 14px;
+    }
+
+    .faq-question {
+        padding: 17px 15px;
+    }
+
+    .question-text {
+        font-size: 14px;
+        gap: 10px;
+    }
+
+    .question-number {
+        min-width: 30px;
+        height: 30px;
+    }
+
+    .faq-answer p {
+        padding: 0 15px 20px 55px;
+        font-size: 14px;
+    }
+
+    .faq-contact {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 20px;
+    }
+}
+
+@media(max-width: 480px) {
+    .faq-header h2 {
+        font-size: 26px;
+    }
+
+    .question-text {
+        font-size: 13px;
+    }
+
+    .faq-icon {
+        min-width: 27px;
+        height: 27px;
+    }
+}
+</style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid py-2 d-none d-lg-flex bg-red fnt-clr">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <small class="me-3"><i class="fa fa-map-marker-alt me-2"></i>Siluvai mukku, Vallam, Tamil Nadu 627809</small>
+                    <small class="me-3"><i class="fa fa-clock me-2"></i>Mon - Sun 07:00 am - 09:00 pm</small>
+                </div>
+                <nav class="breadcrumb fnt-clr mb-0">
+                    <a class="breadcrumb-item small text-body" href="#">Career</a>
+                    <a class="breadcrumb-item small text-body" href="#">Support</a>
+                    <a class="breadcrumb-item small text-body" href="#">Terms</a>
+               
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Brand Start -->
+    <div class="container-fluid text-white pt-4 pb-5 d-none d-lg-flex">
+        <div class="container pb-2">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex">
+                    <div class="d-flex text-black">
+                    <i class="bi bi-telephone-inbound fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="mb-0">Call Now</h5>
+                        <span>+91-9952195211</span>
+ 
+                    </div>
+                </div>
+                    
+                    
+                </div>
+                <a href="index.html"><img src="img/logo.png" width="250" height="150"></a>
+                <div class="d-flex text-black">
+                    <i class="bi bi-envelope fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="mb-0">Mail Now</h5>
+                        <span>info@example.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Brand End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-blue py-lg-0 px-lg-3">
+                <a href="index.html" class="navbar-brand d-lg-none">
+                    <h1 class="text-primary m-0">Lab<span class="text-dark">sky</span></h1>
+                </a>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About Us</a>
+                        <a href="lab-tests.html" class="nav-item nav-link">Lab Tests</a>
+                        <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                        <a href="our-team.html" class="nav-item nav-link">Our Team</a>
+                        <a href="appoinment.html" class="nav-item nav-link">Book an Appointment</a>
+                    
+                        <a href="faq.html" class="nav-item nav-link">FAQs</a>
+
+                        <a href="contact-us.html" class="nav-item nav-link">Contact Us</a>
+                    </div>
+                    <div class="ms-auto d-none d-lg-flex">
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5 mt-4">
+            <h1 class="display-2 text-white mb-3 animated slideInDown">FAQs</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item" aria-current="page">FAQs</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    
+    <section class="faq-section">
+<div class="faq-container">
+
+    <!-- FAQ Heading -->
+    <div class="faq-header">
+        <span class="faq-label">
+            <i class="fas fa-circle-question"></i> FAQs
+        </span>
+
+        <h2>Frequently Asked <span>Questions</span></h2>
+
+        <p>
+            Find answers to common questions about our laboratory
+            services, diagnostic tests, appointments and health checkup packages.
+        </p>
+    </div>
+
+
+   
+
+    <!-- FAQ Questions -->
+    <div class="faq-list" id="faqList">
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span class="question-text">
+                    <span class="question-number">01</span>
+                    What services does Aura Clinical Lab provide?
+                </span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Aura Clinical Lab provides a wide range of diagnostic
+                    services, including blood tests, diabetes tests, thyroid
+                    tests, cholesterol tests, liver function tests, kidney
+                    function tests, urine tests, and other specialized
+                    laboratory investigations.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span class="question-text">
+                    <span class="question-number">02</span>
+                    How can I book an appointment?
+                </span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    You can book an appointment by contacting us through
+                    our website, calling our laboratory, or visiting our lab
+                    directly. Our team will assist you with the appointment process.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span class="question-text">
+                    <span class="question-number">03</span>
+                    Do I need to fast before taking a blood test?
+                </span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Some blood tests, such as fasting blood sugar and lipid
+                    profile, may require fasting. Requirements vary depending
+                    on the test. Please contact our laboratory for specific
+                    instructions before your visit.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span class="question-text">
+                    <span class="question-number">04</span>
+                    How long does it take to receive test results?
+                </span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    The reporting time depends on the type of test. Many
+                    routine tests are completed within the same day, while
+                    certain specialized tests may require additional time.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span class="question-text">
+                    <span class="question-number">05</span>
+                    Can I receive my test reports online?
+                </span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Yes. Where available, test reports can be shared digitally
+                    through WhatsApp, email, or other convenient communication methods.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span class="question-text">
+                    <span class="question-number">06</span>
+                    Do you provide home sample collection?
+                </span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    Please contact Aura Clinical Lab to check the availability
+                    of home sample collection services in your area.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span class="question-text">
+                    <span class="question-number">07</span>
+                    What should I bring when visiting the laboratory?
+                </span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    You may bring your doctor's prescription, previous medical
+                    reports (if available), and any relevant identification
+                    or registration details.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span class="question-text">
+                    <span class="question-number">08</span>
+                    Do I need a doctor's prescription for laboratory tests?
+                </span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    A doctor's prescription is recommended for tests related
+                    to specific medical conditions. However, some routine
+                    health checkup tests may be available without a prescription,
+                    subject to applicable requirements.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span class="question-text">
+                    <span class="question-number">09</span>
+                    What types of health checkup packages do you offer?
+                </span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    We offer health checkup packages designed to assess
+                    different aspects of your health, including general wellness,
+                    diabetes, cholesterol, liver function, kidney function,
+                    and other important health parameters. Contact us for
+                    current package details.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span class="question-text">
+                    <span class="question-number">10</span>
+                    How can I make payment for laboratory tests?
+                </span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    You can contact our laboratory to know the available
+                    payment options, including cash and supported digital
+                    payment methods.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span class="question-text">
+                    <span class="question-number">11</span>
+                    Are the laboratory test results accurate and reliable?
+                </span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    We focus on quality testing procedures, trained laboratory
+                    professionals, and appropriate testing technologies to
+                    provide reliable diagnostic results.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span class="question-text">
+                    <span class="question-number">12</span>
+                    How can I contact Aura Clinical Lab for further assistance?
+                </span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    You can reach us through our website contact form,
+                    phone number, or by visiting our laboratory.
+                    Our team will be happy to assist you with your queries.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- No Results -->
+    <div class="no-results" id="noResults">
+        <i class="fas fa-search"></i>
+        <h3>No questions found</h3>
+        <p>Try searching with a different keyword.</p>
+    </div>
+
+    <!-- Contact Box -->
+    <div class="faq-contact">
+        <div>
+            <h3>Still Have Questions?</h3>
+            <p>
+                Can't find the answer you're looking for?
+                Get in touch with our team. We're happy to help!
+            </p>
+        </div>
+
+        <a href="contact.html">
+            Contact Us <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+</div>
+</section>
+
+<script>
+
+// FAQ Accordion
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    const icon = item.querySelector('.faq-icon i');
+
+    question.addEventListener('click', () => {
+
+        const isActive = item.classList.contains('active');
+
+        // Close all FAQ items
+        faqItems.forEach(faq => {
+            faq.classList.remove('active');
+            faq.querySelector('.faq-answer').style.maxHeight = null;
+            faq.querySelector('.faq-icon i').className = 'fas fa-plus';
+            faq.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // Open selected FAQ
+        if (!isActive) {
+            item.classList.add('active');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            icon.className = 'fas fa-minus';
+            question.setAttribute('aria-expanded', 'true');
+        }
+
+    });
+
+    question.setAttribute('aria-expanded', 'false');
+    question.setAttribute('aria-controls',
+        'faq-answer-' + [...faqItems].indexOf(item));
+    answer.id = 'faq-answer-' + [...faqItems].indexOf(item);
+
+});
+
+// FAQ Search
+const searchInput = document.getElementById('faqSearch');
+const noResults = document.getElementById('noResults');
+
+searchInput.addEventListener('input', function() {
+
+    const searchValue = this.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    faqItems.forEach(item => {
+
+        const question = item.querySelector('.question-text').innerText.toLowerCase();
+        const answer = item.querySelector('.faq-answer').innerText.toLowerCase();
+
+        const matched =
+            question.includes(searchValue) ||
+            answer.includes(searchValue);
+
+        item.style.display = matched ? 'block' : 'none';
+
+        if (matched) {
+            visibleCount++;
+        } else {
+            item.classList.remove('active');
+            item.querySelector('.faq-answer').style.maxHeight = null;
+            item.querySelector('.faq-icon i').className = 'fas fa-plus';
+            item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        }
+
+    });
+
+    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+
+});
+
+</script>
+
+     
+
+
+   <!-- Footer Start -->
+    <div class="container-fluid footer position-relative bg-dark text-white-50 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 pe-lg-5">
+                    <a href="index.html" class="navbar-brand">
+                    <img src="img/aura-logo.png" alt="Aura Logo">
+                    </a>
+                    <p class="fs-5 mb-4" style="padding-top: 20px;">At Aura Clinical Lab, Vallam, we are committed to providing reliable diagnostic testing with a focus on accuracy, quality, and patient care.</p>
+                    <p><i class="fa fa-map-marker-alt me-2"></i>Siluvai Mukku, Vallam, Tenkasi District, Tamil Nadu 627809</p>
+                    <p><i class="fa fa-phone-alt me-2"></i>+91-9952195211</p>
+                    <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
+                    <div class="d-flex mt-4">
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <div class="row g-5">
+                        <div class="col-sm-6">
+                            <h4 class="text-light mb-4">Quick Links</h4>
+                            <a class="btn btn-link" href="about.html">About Us</a>
+                             <a class="btn btn-link" href="lab-tests.html">Lab Tests</a>
+                             <a class="btn btn-link" href="gallery.html">Gallery</a>
+                             <a class="btn btn-link" href="our-team.html">Our Team</a>
+                             <a class="btn btn-link" href="faq.html">FAQs</a>
+                            <a class="btn btn-link" href="contact-us.html">Contact Us</a>
+                           
+                        
+                        </div>
+                        <div class="col-sm-6">
+                            <h4 class="text-light mb-4">Patient Support</h4>
+                            <a class="btn btn-link" href="appoinment.html">Book an Appoinment</a>
+                            <a class="btn btn-link" href="">Help & Support</a>
+                            <a class="btn btn-link" href="">Terms & Condition</a>
+                            
+                        </div>
+                        <div class="col-sm-12">
+                            <h4 class="text-light mb-4">Newsletter</h4>
+                            <div class="w-100">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-0 py-3 px-4" style="background: rgba(255, 255, 255, .1);" placeholder="Your Email Address"><button class="btn btn-primary px-4">Sign Up</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark text-white-50 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; <a href="#">2026 Aura Clinical Lab</a>. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <!--/*** The author’s attribution link below must remain intact on your website. ***/-->
+                    <!--/*** If you wish to remove this credit link, please purchase the Pro Version from https://htmlcodex.com . ***/-->
+                    <p class="mb-0">Designed & Maintained by<a href="https://www.skiftertechnologies.com"> Skifter Technologies</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Lab Tests | AURA - CLINICAL LAB</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+     <link href="img/favico.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Red+Rose:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+:root{--ink:#17213b;--muted:#66718b;--surface:#fff;--line:#e9edf6}
+*{box-sizing:border-box}
+
+.hero{position:relative;overflow:hidden;padding:76px 22px 58px;text-align:center;background:linear-gradient(120deg,#242b70,#5448b8 52%,#168f9c);color:white}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid #ffffff24;border-radius:50%;width:340px;height:340px;top:-220px;left:-90px}
+.hero:after{width:440px;height:440px;top:auto;left:auto;right:-160px;bottom:-330px}
+.hero-inner{position:relative;z-index:1;max-width:850px;margin:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid #ffffff45;background:#ffffff18;border-radius:30px;font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
+.hero h1{font:800 clamp(34px,5vw,58px)/1.12 'Plus Jakarta Sans',sans-serif;margin:20px 0 14px;letter-spacing:-2px}
+.hero p{max-width:660px;margin:0 auto;color:#e8e9ff;font-size:16px;line-height:1.7}
+main{max-width:1380px;margin:auto;padding:52px 28px 85px}
+.toolbar{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:26px}
+.search-wrap{position:relative;flex:1 1 270px;max-width:430px}
+.search-wrap span{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:18px;color:#8b94aa}
+.search{width:100%;border:1px solid var(--line);background:#fff;border-radius:14px;padding:16px 18px 16px 48px;font:500 16px 'DM Sans';outline:none;box-shadow:0 5px 18px #27315c08;transition:.2s}
+.search:focus{border-color:#7772db;box-shadow:0 0 0 4px #7772db18}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filter{border:1px solid #e6e9f2;background:#fff;color:#68728a;border-radius:30px;padding:12px 17px;font:700 14px 'DM Sans';cursor:pointer;transition:.2s}
+.filter:hover,.filter.active{background:#292d78;color:#fff;border-color:#292d78;transform:translateY(-1px)}
+.result-count{color:#8992a7;font-size:13px;margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.card{--accent:#6558d3;--tint:#f0efff;position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;min-height:340px;padding:28px;border:1px solid #edf0f6;border-radius:22px;background:var(--surface);box-shadow:0 8px 28px #25305b0a;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;animation:rise .55s both}
+.card:before{content:"";position:absolute;z-index:-1;width:150px;height:150px;right:-75px;top:-78px;border-radius:50%;background:var(--tint);transition:transform .35s}
+.card:hover{transform:translateY(-7px);box-shadow:0 18px 38px #25305b18;border-color:var(--accent)}
+.card:hover:before{transform:scale(1.45)}
+.icon-box{width:68px;height:68px;border-radius:20px;display:grid;place-items:center;background:var(--tint);font-size:34px;margin-bottom:21px;transition:transform .3s}
+.card:hover .icon-box{transform:rotate(-8deg) scale(1.08)}
+.card h2{font:800 21px/1.35 'Plus Jakarta Sans';margin:0 0 13px;letter-spacing:-.3px}
+.card p{font-size:16px;line-height:1.7;color:var(--muted);margin:0 0 20px}
+.card h3{font-size:12px;letter-spacing:1.3px;text-transform:uppercase;color:var(--accent);margin:auto 0 9px;font-weight:800}
+.card ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.card li{position:relative;padding-left:17px;color:#59647c;font-size:14px;line-height:1.55}
+.card li:before{content:"";position:absolute;left:0;top:6px;width:7px;height:7px;border-radius:50%;background:var(--accent);opacity:.75}
+
+.price-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:22px;padding-top:15px;border-top:1px solid #edf0f6}
+.price-label{font-size:12px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:#8992a7}
+.price-tag{display:inline-flex;align-items:center;justify-content:center;padding:9px 14px;border-radius:12px;background:var(--tint);color:var(--accent);font:800 18px 'Plus Jakarta Sans';white-space:nowrap}
+
+.card[hidden]{display:none}
+.empty{display:none;text-align:center;padding:50px 20px;color:#7b849a;grid-column:1/-1}
+.empty strong{display:block;color:var(--ink);font-size:18px;margin-bottom:6px}
+
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.hero{padding:60px 20px 48px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{padding:23px;min-height:330px}.toolbar{align-items:stretch}.search-wrap{max-width:none}.filters{overflow-x:auto;flex-wrap:nowrap;padding-bottom:5px}.filter{white-space:nowrap}}
+@media(max-width:480px){main{padding:28px 14px 55px}.grid{grid-template-columns:1fr}.card{min-height:0;padding:25px}.hero h1{letter-spacing:-1.2px}.hero p{font-size:14px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid py-2 d-none d-lg-flex bg-red fnt-clr">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <small class="me-3"><i class="fa fa-map-marker-alt me-2"></i>Siluvai mukku, Vallam, Tamil Nadu 627809</small>
+                    <small class="me-3"><i class="fa fa-clock me-2"></i>Mon - Sun 07:00 am - 09:00 pm</small>
+                </div>
+                <nav class="breadcrumb fnt-clr mb-0">
+                    <a class="breadcrumb-item small text-body" href="#">Career</a>
+                    <a class="breadcrumb-item small text-body" href="#">Support</a>
+                    <a class="breadcrumb-item small text-body" href="#">Terms</a>
+               
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Brand Start -->
+    <div class="container-fluid text-white pt-4 pb-5 d-none d-lg-flex">
+        <div class="container pb-2">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex">
+                    <div class="d-flex text-black">
+                    <i class="bi bi-telephone-inbound fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="mb-0">Call Now</h5>
+                        <span>+91-9952195211</span>
+ 
+                    </div>
+                </div>
+                    
+                    
+                </div>
+                <a href="index.html"><img src="img/logo.png" width="250" height="150"></a>
+                <div class="d-flex text-black">
+                    <i class="bi bi-envelope fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="mb-0">Mail Now</h5>
+                        <span>info@example.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Brand End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-blue py-lg-0 px-lg-3">
+                <a href="index.html" class="navbar-brand d-lg-none">
+                    <h1 class="text-primary m-0">Lab<span class="text-dark">sky</span></h1>
+                </a>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About Us</a>
+                        <a href="lab-tests.html" class="nav-item nav-link">Lab Tests</a>
+                        <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                        <a href="our-team.html" class="nav-item nav-link">Our Team</a>
+                        <a href="appoinment.html" class="nav-item nav-link">Book an Appointment</a>
+                    
+                        <a href="faq.html" class="nav-item nav-link">FAQs</a>
+
+                        <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                    </div>
+                    <div class="ms-auto d-none d-lg-flex">
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5 mt-4">
+            <h1 class="display-2 text-white mb-3 animated slideInDown">Lab Tests</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item" aria-current="page">Lab Tests</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    
+    <!-- Service Start -->
+    <div class="container-fluid container-service py-5">
+        
+        <div class="container py-5">
+            <main>
+ <section class="toolbar" aria-label="Search and filter tests">
+  <label class="search-wrap"><span>⌕</span><input class="search" id="search" type="search" placeholder="Search for a test..." aria-label="Search tests"></label>
+  <div class="filters" id="filters">
+   <button class="filter active" data-filter="all">All tests</button>
+   <button class="filter" data-filter="blood">Blood tests</button>
+   <button class="filter" data-filter="health">Health &amp; wellness</button>
+   <button class="filter" data-filter="infection">Infection tests</button>
+   <button class="filter" data-filter="special">Specialized tests</button>
+  </div>
+ </section>
+ <p class="result-count" id="count" aria-live="polite"></p>
+ <section class="grid" id="grid" aria-label="Available laboratory tests">
+  <article class="card" data-category="blood" style="--accent:#e05b78;--tint:#fff0f3"><div class="icon-box">🩸</div><h2>Hemoglobin (Hb) Test</h2><p>Measures hemoglobin in red blood cells, the protein responsible for carrying oxygen throughout the body.</p><h3>Why this test?</h3><ul><li>Assess possible anemia</li><li>Investigate tiredness and weakness</li><li>Monitor selected blood conditions</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="150">₹ 150</span></div></article>
+  <article class="card" data-category="blood" style="--accent:#e39a32;--tint:#fff6e8"><div class="icon-box">🩸</div><h2>Diabetes Test</h2><p>Measures blood glucose to help assess diabetes and monitor blood sugar control.</p><h3>Why this test?</h3><ul><li>Fasting blood glucose assessment</li><li>Post-meal blood sugar assessment</li><li>HbA1c for longer-term monitoring</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="120">₹ 120</span></div></article>
+  <article class="card" data-category="blood" style="--accent:#269c91;--tint:#e9faf6"><div class="icon-box">❤️</div><h2>Blood Cholesterol Test</h2><p>A lipid profile measures cholesterol and triglycerides to help assess cardiovascular risk.</p><h3>Why this test?</h3><ul><li>Measure total cholesterol</li><li>Check LDL and HDL cholesterol</li><li>Assess triglyceride levels</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="250">₹ 250</span></div></article>
+  <article class="card" data-category="blood" style="--accent:#4386d8;--tint:#edf5ff"><div class="icon-box">⚡</div><h2>Electrolyte Test</h2><p>Measures minerals such as sodium, potassium and chloride that help maintain fluid balance and normal body functions.</p><h3>Why this test?</h3><ul><li>Assess electrolyte balance</li><li>Investigate dehydration</li><li>Monitor selected kidney-related conditions</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="300">₹ 300</span></div></article>
+  <article class="card" data-category="blood" style="--accent:#d77a3c;--tint:#fff2e9"><div class="icon-box">🧡</div><h2>Liver Function Test</h2><p>Evaluates selected markers associated with liver health, including enzymes, bilirubin and proteins.</p><h3>Why this test?</h3><ul><li>Assess liver-related conditions</li><li>Investigate jaundice</li><li>Monitor selected medicines and treatments</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="350">₹ 350</span></div></article>
+  <article class="card" data-category="blood" style="--accent:#8062ce;--tint:#f3efff"><div class="icon-box">🦋</div><h2>Thyroid Test</h2><p>TSH, T3 and T4 tests help evaluate thyroid hormone activity.</p><h3>Why this test?</h3><ul><li>Assess thyroid hormone levels</li><li>Investigate possible thyroid disorders</li><li>Monitor thyroid treatment</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="250">₹ 250</span></div></article>
+  <article class="card" data-category="health" style="--accent:#279d78;--tint:#eaf9f1"><div class="icon-box">🌞</div><h2>Vitamin Tests</h2><p>Selected blood tests measure vitamin levels, including vitamin B12 and vitamin D, when clinically indicated.</p><h3>Why this test?</h3><ul><li>Identify possible vitamin deficiencies</li><li>Investigate nutritional concerns</li><li>Assess vitamin D and B12 levels</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="600">₹ 600</span></div></article>
+  <article class="card" data-category="blood" style="--accent:#df596b;--tint:#fff0f2"><div class="icon-box">💗</div><h2>Cardiac Profile Tests</h2><p>Cardiac markers such as troponin may help evaluate possible heart muscle injury in appropriate clinical situations.</p><h3>Why this test?</h3><ul><li>Evaluate suspected heart problems</li><li>Assess selected cardiac markers</li><li>Support clinician-directed assessment</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="900">₹ 900</span></div></article>
+  <article class="card" data-category="health" style="--accent:#b18a37;--tint:#fbf6e9"><div class="icon-box">🦴</div><h2>Bone Health Test</h2><p>Investigations may include calcium, phosphorus, vitamin D and alkaline phosphatase to assess bone and mineral health.</p><h3>Why this test?</h3><ul><li>Assess calcium levels</li><li>Investigate selected nutritional deficiencies</li><li>Evaluate bone and mineral health</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="400">₹ 400</span></div></article>
+  <article class="card" data-category="health" style="--accent:#398dc0;--tint:#edf7fc"><div class="icon-box">💧</div><h2>Urine Test</h2><p>Examines the appearance, chemical composition and microscopic contents of a urine sample.</p><h3>Why this test?</h3><ul><li>Investigate urinary symptoms</li><li>Check selected signs of infection</li><li>Assess certain kidney-related findings</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="150">₹ 150</span></div></article>
+  <article class="card" data-category="blood" style="--accent:#d87942;--tint:#fff2e9"><div class="icon-box">🧪</div><h2>Pancreas Function Test</h2><p>Tests such as amylase and lipase may help investigate selected conditions affecting the pancreas.</p><h3>Why this test?</h3><ul><li>Assess pancreatic enzyme levels</li><li>Support investigation of pancreatitis</li><li>Evaluate selected abdominal symptoms</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="450">₹ 450</span></div></article>
+  <article class="card" data-category="special" style="--accent:#9261ba;--tint:#f7efff"><div class="icon-box">🔬</div><h2>Semen Analysis</h2><p>Examines semen volume, sperm concentration, movement and shape as part of a fertility evaluation.</p><h3>Why this test?</h3><ul><li>Assess sperm concentration</li><li>Evaluate sperm movement</li><li>Examine sperm morphology</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="500">₹ 500</span></div></article>
+  <article class="card" data-category="infection" style="--accent:#4a91b8;--tint:#edf7fc"><div class="icon-box">🫁</div><h2>Sputum Test</h2><p>Examines mucus coughed up from the lungs to investigate selected respiratory infections.</p><h3>Why this test?</h3><ul><li>Investigate persistent cough</li><li>Identify selected microorganisms</li><li>Support tuberculosis investigations</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="250">₹ 250</span></div></article>
+  <article class="card" data-category="blood" style="--accent:#d8a13d;--tint:#fff8e9"><div class="icon-box">💛</div><h2>Jaundice Test</h2><p>Bilirubin testing measures a yellow pigment in the blood that may increase in people with jaundice.</p><h3>Why this test?</h3><ul><li>Measure bilirubin levels</li><li>Investigate yellowing of skin and eyes</li><li>Support liver-related assessment</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="180">₹ 180</span></div></article>
+  <article class="card" data-category="health" style="--accent:#df779e;--tint:#fff0f5"><div class="icon-box">🤰</div><h2>Women's Health &amp; Maternity Tests</h2><p>Selected laboratory tests support maternal health monitoring and women's healthcare assessment.</p><h3>Why this test?</h3><ul><li>Antenatal blood investigations</li><li>Hemoglobin and blood group testing</li><li>Selected glucose and thyroid tests</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="350">₹ 350</span></div></article>
+  <article class="card" data-category="infection" style="--accent:#d16c4b;--tint:#fff1eb"><div class="icon-box">🌡️</div><h2>Dengue &amp; Typhoid Tests</h2><p>Specific investigations may help identify dengue or typhoid. Test selection depends on the duration of illness.</p><h3>Why this test?</h3><ul><li>Investigate fever</li><li>Support dengue assessment</li><li>Support typhoid assessment</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="400">₹ 400</span></div></article>
+  <article class="card" data-category="infection" style="--accent:#3c9b82;--tint:#eaf8f2"><div class="icon-box">🦟</div><h2>Malaria Test</h2><p>Blood microscopy or rapid diagnostic methods can help detect malaria parasites or their antigens.</p><h3>Why this test?</h3><ul><li>Investigate suspected malaria</li><li>Detect malaria parasites</li><li>Support fever evaluation</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="300">₹ 300</span></div></article>
+  <article class="card" data-category="infection" style="--accent:#6684c8;--tint:#eff3ff"><div class="icon-box">🧫</div><h2>Tuberculosis (TB) Test</h2><p>Depending on the suspected infection site, tests may include sputum microscopy, molecular testing or culture.</p><h3>Why this test?</h3><ul><li>Investigate possible TB infection</li><li>Support TB diagnosis</li><li>Monitor selected TB investigations</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="500">₹ 500</span></div></article>
+  <article class="card" data-category="blood" style="--accent:#df5c6e;--tint:#fff0f2"><div class="icon-box">🩸</div><h2>Complete Blood Count (CBC)</h2><p>Measures red and white blood cells, hemoglobin, hematocrit and platelets.</p><h3>Why this test?</h3><ul><li>Assess general blood health</li><li>Investigate possible anemia</li><li>Evaluate selected infection-related changes</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="250">₹ 250</span></div></article>
+  <article class="card" data-category="special" style="--accent:#a35fba;--tint:#f8effb"><div class="icon-box">🛡️</div><h2>Sexually Transmitted Disease (STD) Tests</h2><p>Selected blood, urine or swab tests may help identify specific sexually transmitted infections.</p><h3>Why this test?</h3><ul><li>Support sexual health assessment</li><li>Investigate possible infections</li><li>Support clinician-directed screening</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="450">₹ 450</span></div></article>
+  <article class="card" data-category="health" style="--accent:#4c9eaa;--tint:#eaf8fa"><div class="icon-box">🌼</div><h2>Allergy &amp; Asthma Tests</h2><p>Selected investigations, including specific IgE testing, may assess sensitisation to particular allergens.</p><h3>Why this test?</h3><ul><li>Investigate suspected allergic triggers</li><li>Assess selected allergy markers</li><li>Support clinical allergy evaluation</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="600">₹ 600</span></div></article>
+  <article class="card" data-category="blood" style="--accent:#8b69c5;--tint:#f2effb"><div class="icon-box">⚖️</div><h2>Hormone Tests</h2><p>Measures selected hormones involved in reproductive, metabolic and other body functions.</p><h3>Why this test?</h3><ul><li>Investigate selected hormonal concerns</li><li>Assess reproductive hormones</li><li>Support evaluation of hormonal imbalance</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="350">₹ 350</span></div></article>
+  <article class="card" data-category="special" style="--accent:#bd6a86;--tint:#fff0f4"><div class="icon-box">🎗️</div><h2>Cancer Screening Tests</h2><p>Selected laboratory investigations may be part of specific screening or diagnostic pathways recommended by healthcare professionals.</p><h3>Why this test?</h3><ul><li>Support selected screening pathways</li><li>Assess specific clinical markers</li><li>Assist clinician-directed investigations</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="700">₹ 700</span></div></article>
+  <article class="card" data-category="blood" style="--accent:#399a8b;--tint:#eaf8f4"><div class="icon-box">🫘</div><h2>Kidney &amp; Liver Function Tests</h2><p>Blood investigations evaluate selected markers associated with kidney and liver function.</p><h3>Why this test?</h3><ul><li>Assess creatinine and urea</li><li>Evaluate selected liver markers</li><li>Monitor organ function when advised</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="450">₹ 450</span></div></article>
+  <article class="card" data-category="special" style="--accent:#4d91b7;--tint:#edf6fb"><div class="icon-box">🧬</div><h2>Urine &amp; Stool Tests</h2><p>Urine and stool examinations assess selected chemical, microscopic and microbiological findings.</p><h3>Why this test?</h3><ul><li>Investigate digestive symptoms</li><li>Assess selected urinary concerns</li><li>Identify selected parasites or organisms</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="300">₹ 300</span></div></article>
+  <article class="card" data-category="infection" style="--accent:#5d9c69;--tint:#eff8ef"><div class="icon-box">🦠</div><h2>Microbiology Tests</h2><p>Examines suitable patient samples for bacteria, fungi and other microorganisms using appropriate laboratory methods.</p><h3>Why this test?</h3><ul><li>Investigate suspected infections</li><li>Identify selected microorganisms</li><li>Support culture and sensitivity testing</li></ul><div class="price-row"><span class="price-label">Test price</span><span class="price-tag" data-price="400">₹ 400</span></div></article>
+  <div class="empty" id="empty"><strong>No matching tests found</strong>Try another test name or choose a different category.</div>
+ </section>
+</main>
+    </div>
+    <!-- Service End -->
+     
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer position-relative bg-dark text-white-50 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 pe-lg-5">
+                    <a href="index.html" class="navbar-brand">
+                        <h1 class="h1 text-primary mb-0">Lab<span class="text-white">sky</span></h1>
+                    </a>
+                    <p class="fs-5 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor.</p>
+                    <p><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</p>
+                    <p><i class="fa fa-phone-alt me-2"></i>+012 345 67890</p>
+                    <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
+                    <div class="d-flex mt-4">
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <div class="row g-5">
+                        <div class="col-sm-6">
+                            <h4 class="text-light mb-4">Quick Links</h4>
+                            <a class="btn btn-link" href="">About Us</a>
+                            <a class="btn btn-link" href="">Contact Us</a>
+                            <a class="btn btn-link" href="">Our Services</a>
+                            <a class="btn btn-link" href="">Terms & Condition</a>
+                            <a class="btn btn-link" href="">Support</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <h4 class="text-light mb-4">Popular Links</h4>
+                            <a class="btn btn-link" href="">About Us</a>
+                            <a class="btn btn-link" href="">Contact Us</a>
+                            <a class="btn btn-link" href="">Our Services</a>
+                            <a class="btn btn-link" href="">Terms & Condition</a>
+                            <a class="btn btn-link" href="">Support</a>
+                        </div>
+                        <div class="col-sm-12">
+                            <h4 class="text-light mb-4">Newsletter</h4>
+                            <div class="w-100">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-0 py-3 px-4" style="background: rgba(255, 255, 255, .1);" placeholder="Your Email Address"><button class="btn btn-primary px-4">Sign Up</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark text-white-50 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; <a href="#">Your Site Name</a>. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <!--/*** The author’s attribution link below must remain intact on your website. ***/-->
+                    <!--/*** If you wish to remove this credit link, please purchase the Pro Version from https://htmlcodex.com . ***/-->
+                    <p class="mb-0">Designed by <a href="https://htmlcodex.com">HTML Codex</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+const search = document.getElementById('search');
+const cards = [...document.querySelectorAll('.card')];
+const buttons = [...document.querySelectorAll('.filter')];
+const count = document.getElementById('count');
+const empty = document.getElementById('empty');
+let active = 'all';
+function update(){
+ const term = search.value.trim().toLowerCase();
+ let visible = 0;
+ cards.forEach((card,i)=>{
+  const matchCategory = active === 'all' || card.dataset.category === active;
+  const matchText = card.innerText.toLowerCase().includes(term);
+  const show = matchCategory && matchText;
+  card.hidden = !show;
+  if(show){visible++;card.style.animationDelay = `${Math.min(i%8,7)*45}ms`;}
+ });
+ count.textContent = `Showing ${visible} of ${cards.length} tests`;
+ empty.style.display = visible ? 'none' : 'block';
+}
+buttons.forEach(btn=>btn.addEventListener('click',()=>{
+ buttons.forEach(b=>b.classList.remove('active'));
+ btn.classList.add('active');active=btn.dataset.filter;update();
+}));
+search.addEventListener('input',update);
+update();
+</script>
+</body>
+
+</html>

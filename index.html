@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>AURA - CLINICAL LAB</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+       <link href="img/favico.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Red+Rose:wght@600;700&display=swap"
+        rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* WhatsApp Floating Icon */
+.whatsapp-float {
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    bottom: 25px;
+    right: 105px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 32px;
+    line-height: 55px;
+    z-index: 9999;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    color: #fff;
+    transform: scale(1.1);
+}
+.testimonial-section {
+    padding: 80px 20px;
+    background: #F4F8FF;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.testimonial-container {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading span {
+    color: #0031AD;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    color: #142B50;
+    font-size: 36px;
+    margin: 12px 0;
+}
+
+.section-heading p {
+    color: #777;
+}
+/* Why Choose */
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.why-card {
+    text-align: center;
+    padding: 35px 25px;
+    background: white;
+    border: 1px solid #e5eff2;
+    border-radius: 14px;
+    transition: .3s;
+}
+
+.why-card:hover {
+    border-color:#0031ad;
+    box-shadow: 0 10px 30px rgba(0,80,100,.08);
+    transform: translateY(-5px);
+}
+
+.why-card i {
+    font-size: 34px;
+    color:#0031ad;
+    margin-bottom: 20px;
+}
+
+.why-card h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+
+.testimonial-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.testimonial-track {
+    display: flex;
+    gap: 25px;
+    width: max-content;
+    animation: testimonialScroll 25s linear infinite;
+}
+
+.testimonial-card {
+    width: 340px;
+    flex-shrink: 0;
+    padding: 35px 25px;
+    background: #fff;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0, 49, 173, 0.08);
+    border-bottom: 4px solid #0031AD;
+    box-sizing: border-box;
+}
+
+.testimonial-card .stars {
+    color: #FFB400;
+    font-size: 23px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.testimonial-card p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.8;
+    min-height: 80px;
+}
+
+.testimonial-card h4 {
+    color: #142B50;
+    margin: 20px 0 5px;
+    font-size: 17px;
+}
+
+.testimonial-card small {
+    color: #999;
+}
+
+/* Infinite Auto Slider */
+
+@keyframes testimonialScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause on Hover */
+
+.testimonial-wrapper:hover .testimonial-track {
+    animation-play-state: paused;
+}
+
+/* Responsive */
+
+@media(max-width: 600px) {
+
+    .testimonial-section {
+        padding: 55px 15px;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .testimonial-card {
+        width: 280px;
+        padding: 30px 20px;
+    }
+
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+.aura-stats {
+    width: 100%;
+    padding: 80px 20px;
+   
+    font-family: 'Poppins', sans-serif;
+}
+
+.stats-container {
+    max-width: 100%;
+    margin: auto;
+}
+
+/* Heading */
+
+.stats-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.stats-subtitle {
+    color: #0031AD;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.stats-heading h2 {
+    color: #0031AD;
+    font-size: 34px;
+    font-weight: 700;
+    margin: 12px 0;
+}
+
+.stats-heading p {
+    color: #667085;
+    font-size: 15px;
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+/* Grid */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+/* Cards */
+
+.stat-card {
+    position: relative;
+    text-align: center;
+    background: #FFFFFF;
+    padding: 35px 20px;
+    border-radius: 12px;
+    border: 1px solid #E4ECFA;
+    box-shadow: 0 5px 20px rgba(0, 49, 173, 0.05);
+    transition: all 0.35s ease;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+        90deg, #0031AD, #39A9FF
+    );
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 49, 173, 0.12);
+    border-color: #B7D3FF;
+}
+
+/* Icons */
+
+.stat-icon {
+    width: 65px;
+    height: 65px;
+    background: #EAF2FF;
+    color: #0031AD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 18px;
+    font-size: 27px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-icon {
+    background: #0031AD;
+    color: #FFFFFF;
+    transform: rotateY(180deg);
+}
+
+/* Numbers */
+
+.stat-card h3 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #0031AD;
+    margin: 0 0 8px;
+}
+
+.stat-card p {
+    font-size: 15px;
+    color: #596579;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .stats-heading h2 {
+        font-size: 27px;
+    }
+
+    .stat-card {
+        padding: 28px 12px;
+    }
+
+    .stat-card h3 {
+        font-size: 32px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+    .aura-stats {
+        padding: 55px 15px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .stats-heading h2 {
+        font-size: 23px;
+    }
+
+    .stats-heading p {
+        font-size: 13px;
+    }
+
+    .stat-card {
+        padding: 25px 8px;
+    }
+
+    .stat-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 22px;
+    }
+
+    .stat-card h3 {
+        font-size: 27px;
+    }
+
+    .stat-card p {
+        font-size: 12px;
+    }
+}
+
+     
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid py-2 d-none d-lg-flex bg-red fnt-clr">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <small class="me-3"><i class="fa fa-map-marker-alt me-2"></i>Siluvai mukku, Vallam, Tamil Nadu 627809</small>
+                    <small class="me-3"><i class="fa fa-clock me-2"></i>Mon - Sun 07:00 am - 09:00 pm</small>
+                </div>
+                <nav class="breadcrumb fnt-clr mb-0">
+                    <a class="breadcrumb-item small text-body" href="#">Career</a>
+                    <a class="breadcrumb-item small text-body" href="#">Support</a>
+                    <a class="breadcrumb-item small text-body" href="#">Terms</a>
+               
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Brand Start -->
+    <div class="container-fluid text-white pt-4 pb-5 d-none d-lg-flex">
+        <div class="container pb-2">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex">
+                    <div class="d-flex text-black">
+                    <i class="bi bi-telephone-inbound fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="mb-0">Call Now</h5>
+                        <span>+91-9952195211</span>
+ 
+                    </div>
+                </div>
+                    
+                    
+                </div>
+                <a href="index.html"><img src="img/logo.png" width="250" height="150"></a>
+                <div class="d-flex text-black">
+                    <i class="bi bi-envelope fs-2"></i>
+                    <div class="ms-3">
+                        <h5 class="mb-0">Mail Now</h5>
+                        <span>info@example.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Brand End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-blue py-lg-0 px-lg-3">
+                <a href="index.html" class="navbar-brand d-lg-none">
+                    <h1 class="text-primary m-0">Lab<span class="text-dark">sky</span></h1>
+                </a>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About Us</a>
+                        <a href="lab-tests.html" class="nav-item nav-link">Lab Tests</a>
+                        <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                        <a href="our-team.html" class="nav-item nav-link">Our Team</a>
+                        <a href="appoinment.html" class="nav-item nav-link">Book an Appointment</a>
+                    
+                        <a href="faq.html" class="nav-item nav-link">FAQs</a>
+
+                        <a href="contact-us.html" class="nav-item nav-link">Contact Us</a>
+                    </div>
+                    <div class="ms-auto d-none d-lg-flex">
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid header-carousel px-0 mb-5">
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="img/carousel-1.jpg" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <div class="col-lg-7 text-start">
+                                    <h1 class="display-1 text-white animated slideInRight mb-3">Reliable Diagnostic Services for a Healthier Tomorrow</h1>
+                                    <p class="mb-5 animated slideInRight">At Aura Clinical Lab, we are committed to providing accurate, reliable, and timely diagnostic testing services using modern laboratory technology and quality-focused practices.Your health matters to us. We make diagnostic testing simple, accessible, and trustworthy for you and your family.</p>
+
+                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInRight">Explore More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/carousel-2.jpg" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-end">
+                                <div class="col-lg-7 text-end">
+                                    <h1 class="display-1 text-white animated slideInLeft mb-3">YOUR TRUSTED DIAGNOSTIC PARTNER</h1>
+                                    <!--<p class="mb-5 animated slideInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue, iaculis id elit eget, ultrices pulvinar tortor. Quisque vel lorem porttitor, malesuada arcu quis, fringilla risus.</p>-->
+                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">Explore More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container pb-5">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="row g-0">
+                        <div class="col-6">
+                            <img class="img-fluid" src="img/about-1.jpg">
+                        </div>
+                        <div class="col-6">
+                            <img class="img-fluid" src="img/about-2.jpg">
+                        </div>
+                        <div class="col-6">
+                            <img class="img-fluid" src="img/about-3.jpg">
+                        </div>
+                        <div class="col-6">
+                            <div class="bg-primary w-100 h-100 mt-n5 ms-n5 d-flex flex-column align-items-center justify-content-center" style="background-color: #A00000;">
+                                <div class="icon-box-light">
+                                    <i class="bi bi-award text-white"></i>
+                                </div>
+                                <h1 class="display-1 text-white mb-0" data-toggle="counter-up">15</h1>
+                                <small class="fs-5 text-white">Years Experience</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="display-6 mb-4">Trusted Lab Experts and Latest Lab Technologies</h1>
+                    <p class="mb-4">
+
+At <b>Aura Clinical Lab</b>, Vallam, we are committed to providing reliable diagnostic testing with a focus on accuracy, quality, and patient care. Our laboratory combines professional expertise with modern diagnostic technologies to support the early detection, diagnosis, and monitoring of various health conditions.</p>
+
+<p>We strive to deliver dependable test results, maintain high standards of laboratory quality, and ensure a comfortable experience for every patient. Your health is our priority, and we are dedicated to supporting better healthcare through trusted diagnostic services.</p>
+                  <p>We believe that quality healthcare begins with trust, transparency, and compassionate patient service. Our team is dedicated to guiding patients throughout their diagnostic journey by offering friendly assistance, clear communication, and a patient-friendly environment. Whether you are visiting us for a routine test or a comprehensive health screening, Aura Clinical Lab is here to support your wellness journey with care, commitment, and confidence.</p>
+                  <p>We follow systematic testing procedures, careful sample handling, and quality-focused laboratory practices to ensure reliable outcomes. From routine health checkups to specialized diagnostic investigations, we aim to provide timely and consistent services that healthcare professionals and patients can trust.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+<a href="https://wa.me/919952195211"
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat with Aura Clinical Lab on WhatsApp">
+
+    <i class="bi bi-whatsapp"></i>
+
+</a>
+
+<!-- WHY CHOOSE US -->
+<div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s">
+<section class="section" style="background-color: #F4F8FF;padding: 80px 20px">
+    <div class="container">
+
+        <div class="section-heading">
+            <span>Why Choose Us</span>
+            <h2>Why Choose Aura Clinical Lab?</h2>
+            <p>We believe that dependable diagnostic services play an important role in better healthcare decisions.</p>
+        </div>
+
+        <div class="why-grid">
+
+            <div class="why-card">
+                <i class="fas fa-microscope"></i>
+                <h3>Modern Laboratory Approach</h3>
+                <p>A focus on appropriate laboratory equipment and testing practices.</p>
+            </div>
+
+            <div class="why-card">
+                <i class="fas fa-user-doctor"></i>
+                <h3>Professional Care</h3>
+                <p>Patient-friendly service with attention to individual needs.</p>
+            </div>
+
+            <div class="why-card">
+                <i class="fas fa-vial"></i>
+                <h3>Wide Test Selection</h3>
+                <p>Diagnostic investigations covering a variety of healthcare needs.</p>
+            </div>
+
+            <div class="why-card">
+                <i class="fas fa-shield-heart"></i>
+                <h3>Quality Commitment</h3>
+                <p>Dedicated to maintaining quality throughout the testing process.</p>
+            </div>
+
+            <div class="why-card">
+                <i class="fas fa-clock"></i>
+                <h3>Convenient Service</h3>
+                <p>Designed to make laboratory testing simple and convenient.</p>
+            </div>
+
+            <div class="why-card">
+                <i class="fas fa-heart"></i>
+                <h3>Patient First</h3>
+                <p>Your comfort, care and trust remain important to us.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+</div>
+<div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+<section class="aura-stats">
+    <div class="stats-container">
+
+        <div class="stats-heading">
+            <span class="stats-subtitle">AURA CLINICAL LAB</span>
+            <h2>Our Numbers Reflect Our Commitment</h2>
+            <p>
+                Delivering trusted diagnostic services with
+                quality, care and reliability.
+            </p>
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-microscope"></i>
+                </div>
+                <h3 class="counter" data-target="19">0</h3>
+                <p>Diagnostic Services</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-vials"></i>
+                </div>
+                <h3 class="counter" data-target="300"
+                    data-suffix="+">0</h3>
+                <p>Tests Available</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <h3 class="counter" data-target="217">0</h3>
+                <p>Happy Patients</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <h3 class="counter" data-target="13">0</h3>
+                <p>Health Packages</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-flask"></i>
+                </div>
+                <h3 class="counter" data-target="21697">0</h3>
+                <p>Tests Completed</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <h3 class="counter" data-target="216">0</h3>
+                <p>Days of Commitment</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+</div>
+</div>
+<div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s">
+<section class="testimonial-section">
+    <div class="testimonial-container">
+
+        <div class="section-heading">
+            <span>TESTIMONIALS</span>
+            <h2>What Our Patients Say</h2>
+            <p>Our patients' trust is our greatest achievement.</p>
+        </div>
+
+        <div class="testimonial-wrapper">
+            <div class="testimonial-track" id="testimonialTrack">
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Excellent service and friendly staff. The testing process was smooth and quick. Highly recommended!"</p>
+                    <h4>Rajesh Kumar</h4>
+                    <small>Patient</small>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Very clean laboratory with modern facilities. The staff were professional and helpful throughout."</p>
+                    <h4>Priya Devi</h4>
+                    <small>Patient</small>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Good diagnostic services and a comfortable environment. I had a very pleasant experience."</p>
+                    <h4>Suresh Raj</h4>
+                    <small>Patient</small>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"The staff explained everything clearly. Excellent customer care and professional service."</p>
+                    <h4>Meena Lakshmi</h4>
+                    <small>Patient</small>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"A reliable laboratory with friendly technicians and a well-maintained testing environment."</p>
+                    <h4>Arun Kumar</h4>
+                    <small>Patient</small>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+</div>
+
+     <!-- Footer Start -->
+    <div class="container-fluid footer position-relative bg-dark text-white-50 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 pe-lg-5">
+                    <a href="index.html" class="navbar-brand">
+                    <img src="img/aura-logo.png" alt="Aura Logo">
+                    </a>
+                    <p class="fs-5 mb-4" style="padding-top: 20px;">At Aura Clinical Lab, Vallam, we are committed to providing reliable diagnostic testing with a focus on accuracy, quality, and patient care.</p>
+                    <p><i class="fa fa-map-marker-alt me-2"></i>Siluvai Mukku, Vallam, Tenkasi District, Tamil Nadu 627809</p>
+                    <p><i class="fa fa-phone-alt me-2"></i>+91-9952195211</p>
+                    <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
+                    <div class="d-flex mt-4">
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-lg-square btn-primary me-2" href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <div class="row g-5">
+                        <div class="col-sm-6">
+                            <h4 class="text-light mb-4">Quick Links</h4>
+                            <a class="btn btn-link" href="about.html">About Us</a>
+                             <a class="btn btn-link" href="lab-tests.html">Lab Tests</a>
+                             <a class="btn btn-link" href="gallery.html">Gallery</a>
+                             <a class="btn btn-link" href="our-team.html">Our Team</a>
+                             <a class="btn btn-link" href="faq.html">FAQs</a>
+                            <a class="btn btn-link" href="contact-us.html">Contact Us</a>
+                           
+                        
+                        </div>
+                        <div class="col-sm-6">
+                            <h4 class="text-light mb-4">Patient Support</h4>
+                            <a class="btn btn-link" href="appoinment.html">Book an Appoinment</a>
+                            <a class="btn btn-link" href="">Help & Support</a>
+                            <a class="btn btn-link" href="">Terms & Condition</a>
+                            
+                        </div>
+                        <div class="col-sm-12">
+                            <h4 class="text-light mb-4">Newsletter</h4>
+                            <div class="w-100">
+                                <div class="input-group">
+                                    <input type="text" class="form-control border-0 py-3 px-4" style="background: rgba(255, 255, 255, .1);" placeholder="Your Email Address"><button class="btn btn-primary px-4">Sign Up</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark text-white-50 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; <a href="#">2026 Aura Clinical Lab</a>. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <!--/*** The author’s attribution link below must remain intact on your website. ***/-->
+                    <!--/*** If you wish to remove this credit link, please purchase the Pro Version from https://htmlcodex.com . ***/-->
+                    <p class="mb-0">Designed & Maintained by<a href="https://www.skiftertechnologies.com"> Skifter Technologies</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+
+const track = document.getElementById("testimonialTrack");
+
+track.innerHTML += track.innerHTML;
+
+</script>
+
+<script>
+
+const counters = document.querySelectorAll(".counter");
+
+const observer = new IntersectionObserver((entries, observer) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            const counter = entry.target;
+            const target = Number(counter.dataset.target);
+            const suffix = counter.dataset.suffix || "";
+
+            const duration = 2000;
+            const startTime = performance.now();
+
+            function updateCounter(currentTime) {
+
+                const progress = Math.min(
+                    (currentTime - startTime) / duration,
+                    1
+                );
+
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+
+                const currentValue = Math.floor(
+                    easeOut * target
+                );
+
+                counter.textContent =
+                    currentValue.toLocaleString("en-IN") + suffix;
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent =
+                        target.toLocaleString("en-IN") + suffix;
+                }
+            }
+
+            requestAnimationFrame(updateCounter);
+
+            observer.unobserve(counter);
+        }
+
+    });
+
+}, { threshold: 0.5 });
+
+counters.forEach(counter => {
+    observer.observe(counter);
+});
+
+</script>
+</body>
+
+</html>
